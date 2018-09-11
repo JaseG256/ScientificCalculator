@@ -1,9 +1,14 @@
 public class Calculator extends Operations {
 
-    private OneNumber one;
-    private TwoNumbers two;
-
     public Calculator() {
+    }
+
+    public double one(OneNumber oneNumber, double number) {
+        return oneNumber.doMath(number);
+    }
+
+    public double two(TwoNumbers twoNumbers, double x, double y) {
+        return twoNumbers.calculate(x, y);
     }
 
     public void runCommandLoop() {
@@ -18,7 +23,7 @@ public class Calculator extends Operations {
                 }
 
                 if (command.equalsIgnoreCase("clear")) {
-                    calc.clear();
+                    one(((x) -> x = 0), currentNumber);
                 }
 
                 if (command.equalsIgnoreCase("invert")) {
@@ -51,21 +56,21 @@ public class Calculator extends Operations {
 
                 if (command.equalsIgnoreCase("add")) {
                     if (currentNumber == 0) {
-                        firstNumber = input.nextDouble();
+                        firstNumber = scan.nextDouble();
                         // read second number
-                        secondNumber = input.nextDouble();
+                        secondNumber = scan.nextDouble();
                         // call the add method on calc and display
-                        calc.add(firstNumber, secondNumber);
+                        two(((x, y) -> x + y), firstNumber, secondNumber);
                     } else {
                         firstNumber = currentNumber;
-                        secondNumber = input.nextDouble();
-                        calc.add(firstNumber, secondNumber);
+                        secondNumber = scan.nextDouble();
+                        two(((x, y) -> x + y), firstNumber, secondNumber);
                     }
                 }
 
                 if (command.equalsIgnoreCase("subtract")) {
                     if (currentNumber == 0) {
-                        firstNumber = input.nextDouble();
+                        firstNumber = scan.nextDouble();
                         // read second number
                         secondNumber = input.nextDouble();
                         // call the add method on calc and display
