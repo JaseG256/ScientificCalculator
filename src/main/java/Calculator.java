@@ -89,47 +89,47 @@ public class Calculator extends Operations {
 
                 }
 
-//                if (command.equalsIgnoreCase("multiply")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
-//                        // read second number
-//                        secondNumber = input.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.multiply(firstNumber, secondNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        secondNumber = input.nextDouble();
-//                        calc.multiply(firstNumber, secondNumber);
-//                    }
-//                }
-//
-//                if (command.equalsIgnoreCase("divide")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
-//                        // read second number
-//                        secondNumber = input.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.divide(firstNumber, secondNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        secondNumber = input.nextDouble();
-//                        calc.divide(firstNumber, secondNumber);
-//                    }
-//                }
-//                if (command.equalsIgnoreCase("square")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.square(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.square(firstNumber);
-//                    }
-//                }
-//
+                if (command.equalsIgnoreCase("multiply")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // read second number
+                        secondNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        two(((x, y) -> x * y), firstNumber, secondNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        secondNumber = scan.nextDouble();
+                        two(((x, y) -> x * y), firstNumber, secondNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("divide")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // read second number
+                        secondNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        two(((x, y) -> x / y), firstNumber, secondNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        secondNumber = scan.nextDouble();
+                        two(((x, y) -> x / y), firstNumber, secondNumber);
+                    }
+                }
+                if (command.equalsIgnoreCase("square")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one(((x) -> x * x), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one(((x) -> x * x), firstNumber);
+                    }
+                }
+
 //                if (command.equalsIgnoreCase("round")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.round(firstNumber);
 //                    } else {
@@ -140,7 +140,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("up")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.roundUp(firstNumber);
 //                    } else {
@@ -151,7 +151,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("down")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.roundDown(firstNumber);
 //                    } else {
@@ -162,7 +162,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("log")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.log(firstNumber);
 //                    } else {
@@ -173,20 +173,20 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("power")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
-//                        secondNumber = input.nextDouble();
+//                        secondNumber = scan.nextDouble();
 //                        calc.power(firstNumber, secondNumber);
 //                    } else {
 //                        firstNumber = currentNumber;
-//                        secondNumber = input.nextDouble();
+//                        secondNumber = scan.nextDouble();
 //                        calc.power(firstNumber, secondNumber);
 //                    }
 //                }
 //
 //                if (command.equalsIgnoreCase("sin")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.sin(firstNumber);
 //                    } else {
@@ -197,7 +197,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("invsin")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.asin(firstNumber);
 //                    } else {
@@ -208,7 +208,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("cos")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.cos(firstNumber);
 //                    } else {
@@ -219,7 +219,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("invcos")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.acos(firstNumber);
 //                    } else {
@@ -230,7 +230,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("tan")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.tan(firstNumber);
 //                    } else {
@@ -242,7 +242,7 @@ public class Calculator extends Operations {
 //
 //                if (command.equalsIgnoreCase("invtan")) {
 //                    if (currentNumber == 0) {
-//                        firstNumber = input.nextDouble();
+//                        firstNumber = scan.nextDouble();
 //                        // call the add method on calc and display
 //                        calc.atan(firstNumber);
 //                    } else {
