@@ -5,5 +5,6 @@ public class MainApplication {
         System.out.println("Welcome to my calculator!");
 
         Calculator calculator = new Calculator();
+        calculator.runCommandLoop();
     }
 }
