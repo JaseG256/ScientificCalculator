@@ -160,30 +160,30 @@ public class Calculator extends Operations {
                     }
                 }
 
-//                if (command.equalsIgnoreCase("log")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.log(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.log(firstNumber);
-//                    }
-//                }
-//
-//                if (command.equalsIgnoreCase("power")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        secondNumber = scan.nextDouble();
-//                        calc.power(firstNumber, secondNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        secondNumber = scan.nextDouble();
-//                        calc.power(firstNumber, secondNumber);
-//                    }
-//                }
-//
+                if (command.equalsIgnoreCase("log")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::log10), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::log10), firstNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("power")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        secondNumber = scan.nextDouble();
+                        two((Math::pow), firstNumber, secondNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        secondNumber = scan.nextDouble();
+                        two((Math::pow), firstNumber, secondNumber);
+                    }
+                }
+
 //                if (command.equalsIgnoreCase("sin")) {
 //                    if (currentNumber == 0) {
 //                        firstNumber = scan.nextDouble();
