@@ -131,35 +131,35 @@ public class Calculator extends Operations {
                     if (currentNumber == 0) {
                         firstNumber = scan.nextDouble();
                         // call the add method on calc and display
-                        one(((x) -> Math.round(x)), firstNumber);
+                        one((Math::round), firstNumber);
                     } else {
                         firstNumber = currentNumber;
-                        one(((x) -> Math.round(x)), firstNumber);
+                        one((Math::round), firstNumber);
                     }
                 }
 
-//                if (command.equalsIgnoreCase("up")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.roundUp(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.roundUp(firstNumber);
-//                    }
-//                }
-//
-//                if (command.equalsIgnoreCase("down")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.roundDown(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.roundDown(firstNumber);
-//                    }
-//                }
-//
+                if (command.equalsIgnoreCase("up")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::ceil), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::ceil), firstNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("down")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::floor), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::floor), firstNumber);
+                    }
+                }
+
 //                if (command.equalsIgnoreCase("log")) {
 //                    if (currentNumber == 0) {
 //                        firstNumber = scan.nextDouble();
