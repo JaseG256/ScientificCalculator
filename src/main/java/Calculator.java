@@ -127,17 +127,17 @@ public class Calculator extends Operations {
                     }
                 }
 
-//                if (command.equalsIgnoreCase("round")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.round(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.round(firstNumber);
-//                    }
-//                }
-//
+                if (command.equalsIgnoreCase("round")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one(((x) -> Math.round(x)), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one(((x) -> Math.round(x)), firstNumber);
+                    }
+                }
+
 //                if (command.equalsIgnoreCase("up")) {
 //                    if (currentNumber == 0) {
 //                        firstNumber = scan.nextDouble();

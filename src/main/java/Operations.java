@@ -4,9 +4,9 @@ public abstract class Operations {
 
     Scanner scan = new Scanner(System.in);
 
-    protected static boolean isError = false;
+    protected boolean isError = false;
 
-    protected static double currentNumber;
+    protected double currentNumber;
 
     protected double numInMemory;
 
