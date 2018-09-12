@@ -1,13 +1,11 @@
 public class Calculator extends Operations {
 
-    public Calculator() {
-    }
+    public Calculator() { }
 
     public double one(OneNumber oneNumber, double number) {
         update(oneNumber.doMath(number));
         display();
         return oneNumber.doMath(number);
-
     }
 
     public double two(TwoNumbers twoNumbers, double x, double y) {
@@ -31,33 +29,43 @@ public class Calculator extends Operations {
                     one(((x) -> x = 0), currentNumber);
                 }
 
-//                if (command.equalsIgnoreCase("invert")) {
-//                    calc.invertSign();
-//                }
-//
-//                if (command.equalsIgnoreCase("inverse")) {
-//                    calc.inverse(currentNumber);
-//                }
-//
-//                if (command.equalsIgnoreCase("save")) {
-//                    one(((x) -> x = currentNumber), numInMemory);
-//                }
-//
-//                if (command.equalsIgnoreCase("recall")) {
-//                    calc.recall();
-//                }
-//
-//                if (command.equalsIgnoreCase("save2")) {
-//                    calc.addToNumInMemory();
-//                }
-//
-//                if (command.equalsIgnoreCase("mode")) {
-//                    calc.switchDisplayMode();
-//                }
-//
-//                if (command.equalsIgnoreCase("units")) {
-//                    calc.switchUnitsMode();
-//                }
+                if (command.equalsIgnoreCase("invert")) {
+                    if (currentNumber == 0) {
+                        currentNumber = 0;
+                        update(currentNumber);
+                    } else if (currentNumber > 0) {
+                        one(((x) -> currentNumber -= (2 * currentNumber)), currentNumber);
+                    } else if (currentNumber < 0) {
+                        one(((x) -> currentNumber += (-2 * currentNumber)), currentNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("inverse")) {
+                    one(((x) -> (1 / x)), currentNumber);
+                }
+
+                if (command.equalsIgnoreCase("save")) {
+                    one(((x) -> x = currentNumber), numInMemory);
+                    System.out.println("Stored : " + numInMemory);
+                }
+
+                if (command.equalsIgnoreCase("recall")) {
+                    one(((x) -> x = numInMemory), currentNumber);
+                    System.out.println("Stored value : " + numInMemory);
+                }
+
+                if (command.equalsIgnoreCase("save2")) {
+                    one(((x) -> x += numInMemory), currentNumber);
+                    System.out.println("Stored value: " + numInMemory);
+                }
+
+                if (command.equalsIgnoreCase("mode")) {
+                    switchDisplayMode();
+                }
+
+                if (command.equalsIgnoreCase("units")) {
+                    switchUnitsMode();
+                }
 
                 if (command.equalsIgnoreCase("add")) {
                     if (currentNumber == 0) {
