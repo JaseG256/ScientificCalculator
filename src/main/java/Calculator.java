@@ -184,77 +184,77 @@ public class Calculator extends Operations {
                     }
                 }
 
-//                if (command.equalsIgnoreCase("sin")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.sin(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.sin(firstNumber);
-//                    }
-//                }
-//
-//                if (command.equalsIgnoreCase("invsin")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.asin(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.asin(firstNumber);
-//                    }
-//                }
-//
-//                if (command.equalsIgnoreCase("cos")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.cos(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.cos(firstNumber);
-//                    }
-//                }
-//
-//                if (command.equalsIgnoreCase("invcos")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.acos(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.acos(firstNumber);
-//                    }
-//                }
-//
-//                if (command.equalsIgnoreCase("tan")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.tan(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.tan(firstNumber);
-//                    }
-//                    // and on and on
-//                }
-//
-//                if (command.equalsIgnoreCase("invtan")) {
-//                    if (currentNumber == 0) {
-//                        firstNumber = scan.nextDouble();
-//                        // call the add method on calc and display
-//                        calc.atan(firstNumber);
-//                    } else {
-//                        firstNumber = currentNumber;
-//                        calc.atan(firstNumber);
-//                    }
-//                }
-//            } else {
-//                System.out.println("Error! Clear Error!");
-//                if (command.equalsIgnoreCase("clear")) {
-//                    calc.clear();
-//                }
+                if (command.equalsIgnoreCase("sin")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::sin), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::sin), firstNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("invsin")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::asin), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::asin), firstNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("cos")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::cos), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::cos), firstNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("invcos")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::acos), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::acos), firstNumber);
+                    }
+                }
+
+                if (command.equalsIgnoreCase("tan")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::tan), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::tan), firstNumber);
+                    }
+                    // and on and on
+                }
+
+                if (command.equalsIgnoreCase("invtan")) {
+                    if (currentNumber == 0) {
+                        firstNumber = scan.nextDouble();
+                        // call the add method on calc and display
+                        one((Math::acos), firstNumber);
+                    } else {
+                        firstNumber = currentNumber;
+                        one((Math::acos), firstNumber);
+                    }
+                }
+            } else {
+                System.out.println("Error! Clear Error!");
+                if (command.equalsIgnoreCase("clear")) {
+                    one(((x) -> x = 0), currentNumber);
+                }
             }
         }
     }
